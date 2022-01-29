@@ -1,0 +1,4 @@
+git init
+Initialized empty Git repository in C:/Apagar/GitCommands/.git/
+
+git add commands.txt
