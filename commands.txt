@@ -2,3 +2,16 @@ git init
 Initialized empty Git repository in C:/Apagar/GitCommands/.git/
 
 git add commands.txt
+
+git status
+
+git commit
+*** Please tell me who you are.
+git config --global user.name "gabriel"
+git config --global user.enail "gabriel@email.com
+
+git log
+
+git remote add origin https://github.com/GabrielDevCpp/Commands.git
+
+git push -u origin master
