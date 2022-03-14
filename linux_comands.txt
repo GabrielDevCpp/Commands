@@ -1,0 +1,21 @@
+* Editor vi
+vi file.c
+i
+...
+esc
+:x
+
+* Mostra libs chamadas
+ldd ./a.out
+
+* Funções das libs
+ltrace ./a.out
+
+* System trace
+strace ./a.out
+
+* Desmontagem
+objdump -d ./a.out | less
+
+* Contagem
+echo {0..9}
