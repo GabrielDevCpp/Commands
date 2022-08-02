@@ -19,3 +19,6 @@ objdump -d ./a.out | less
 
 * Contagem
 echo {0..9}
+
+* Data timestamp (Sun Jun  5 13:46:33 UTC 2022)
+date -ud @1654436793
