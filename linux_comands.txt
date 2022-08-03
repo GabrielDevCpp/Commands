@@ -25,3 +25,26 @@ date -ud @1654436793
 
 * Versão Ubuntu
 cat /etc/issue
+
+* Hexdump
+xxd
+
+* ASCII
+man ascii
+
+** Radare2
+* Rax2
+rax2 10
+0xa
+rax2 10+34
+0x2c
+* base10
+rax2 =10 12
+12
+* string para hexa
+rax2 -S Gabriel
+4761627269656c
+* hexa para string
+rax2 -s 4761627269656c
+* Tabela ascii
+rax2 -a
