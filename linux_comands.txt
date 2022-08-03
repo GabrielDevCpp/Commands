@@ -29,22 +29,43 @@ cat /etc/issue
 * Hexdump
 xxd
 
+* Gerar bytes aleatórios
+*if (input file)
+*of (output file)
+*bs (block size 32bytes)
+*count (numero de vezes 1 vez)
+dd if=/dev/urandom of=key bs=32 count=1
+> 1+0 records in
+> 1+0 records out
+> 32 bytes copied, 0.00210498 s, 15.2 kB/s
+xxd key
+> 00000000: ed8a 67cb 1140 ff18 107c 0cde ee57 ba31  ..g..@...|...W.1
+> 00000010: d298 463e c522 68cc 680a 92f5 b499 cc28  ..F>."h.h......(
+
 * ASCII
 man ascii
 
 ** Radare2
 * Rax2
 rax2 10
-0xa
+> 0xa
 rax2 10+34
-0x2c
+> 0x2c
 * base10
 rax2 =10 12
-12
+> 12
 * string para hexa
 rax2 -S Gabriel
-4761627269656c
+> 4761627269656c
 * hexa para string
 rax2 -s 4761627269656c
 * Tabela ascii
 rax2 -a
+
+* Rahash2
+* algoritmo SHA1 em string
+rahash2 -a SHA1 -s Gabriel
+> 0x00000000-0x00000006 sha1: aaac72d4824650c176db2fc2451be237f164ea98
+* xor chave 5b
+rahash2 -E xor -S 5B -s Gabriel
+> :9)2>7
