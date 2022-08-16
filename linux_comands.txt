@@ -5,6 +5,9 @@ i
 esc
 :x
 
+* Contar caracteres em arquivo
+wc -c filename
+
 * Mostra libs chamadas
 ldd ./a.out
 
