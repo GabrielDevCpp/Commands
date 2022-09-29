@@ -48,6 +48,28 @@ xxd key
 * ASCII
 man ascii
 
+** GDB
+* Abrir
+gdb program
+* Mostrar hexa main()
+disas main
+* Breakpoint
+b * 0x0000000000401176
+* Executar
+r
+* Executar + arquivo
+r < file
+* Próxima instrução
+s
+* Continuar
+c
+* Olhar endereço do topo da pilha
+x/gx $rsp
+* Olhar 20 itens da pilhar
+x/20gx $rsp
+* Olhar registradores
+i r
+
 ** Radare2
 * Rax2
 rax2 10
@@ -72,3 +94,4 @@ rahash2 -a SHA1 -s Gabriel
 * xor chave 5b
 rahash2 -E xor -S 5B -s Gabriel
 > :9)2>7
+
