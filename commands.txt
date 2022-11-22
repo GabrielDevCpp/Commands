@@ -17,3 +17,5 @@ git remote add origin https://github.com/GabrielDevCpp/Commands.git
 git push -u origin main
 
 git pull
+
+git rm file
