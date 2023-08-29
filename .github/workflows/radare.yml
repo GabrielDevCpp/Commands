@@ -5,11 +5,9 @@ on: workflow_dispatch
 jobs:
   commands:
     name: Commands
-    runs-on: ubuntu-latest
+    runs-on: radare/radare2
 
     steps:
-      - name: Install Radare
-        run: apt install radare2
       - name: Print hexa
         run: |
           rax2 10
