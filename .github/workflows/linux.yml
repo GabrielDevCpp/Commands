@@ -22,5 +22,27 @@ jobs:
         run: dd if=/dev/urandom of=key bs=32 count=1
       - name: Print file with bytes
         run: xxd key
-
     
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create file
+        run: echo $'int main()\n{\nreturn 0;\n}\n' >> file.cpp
+      - name: Show file content
+        run: cat file.cpp
+      - name: Compile file
+        run: g++ file.cpp
+      - name: Show files in directory
+        run: ls -la
+      - name: Count characters
+        run: wc -c a.out
+      - name: Show libs
+        run: ldd a.out
+      - name: Show functions calss
+        run: ltrace a.out
+      - name: Show system calls
+        run: strace a.out
+      - name: Demangle
+        run: objdump -d a.out | less
+      - name: Hexdump
+        run: xxd a.out | less
