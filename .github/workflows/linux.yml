@@ -44,6 +44,6 @@ jobs:
       - name: Demangle
         run: objdump -d a.out | less
       - name: Show system calls
-        run: strace a.out
+        run: strace ./a.out
       - name: Show functions calss
-        run: ltrace a.out
+        run: ltrace ./a.out
