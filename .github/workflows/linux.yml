@@ -24,6 +24,7 @@ jobs:
         run: xxd key
     
   compile:
+    name: Compile
     runs-on: ubuntu-latest
     steps:
       - name: Create file
@@ -38,11 +39,11 @@ jobs:
         run: wc -c a.out
       - name: Show libs
         run: ldd a.out
-      - name: Show functions calss
-        run: ltrace a.out
-      - name: Show system calls
-        run: strace a.out
-      - name: Demangle
-        run: objdump -d a.out | less
       - name: Hexdump
         run: xxd a.out | less
+      - name: Demangle
+        run: objdump -d a.out | less
+      - name: Show system calls
+        run: strace a.out
+      - name: Show functions calss
+        run: ltrace a.out
