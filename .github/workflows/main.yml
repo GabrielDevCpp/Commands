@@ -1,0 +1,26 @@
+name: Linux Commands
+
+on: workflow_dispatch
+
+jobs:
+  commands:
+    name: Commands
+    runs-on: unbuntu-latest
+    
+    steps:
+      - name: Create file
+        run: echo {0..9} >> file.txt
+      - name: Print file
+        run: cat file.txt
+      - name: Count characters
+        run: wc -c file.txt
+      - name: Print timestamp
+        run: date -ud @1654436793
+      - name: Print Ubuntu version
+        run: cat /etc/issue
+      - name: Generate random bytes
+        run: dd if=/dev/urandom of=key bs=32 count=1
+      - name: Print file with bytes
+        run: xxd key
+
+    
