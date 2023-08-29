@@ -5,9 +5,13 @@ on: workflow_dispatch
 jobs:
   commands:
     name: Commands
-    runs-on: radare/radare2
+    runs-on: ubunto-latest
 
     steps:
+      - name: Install Radare
+        run: |
+          sudo -i
+          apt install radare2
       - name: Print hexa
         run: |
           rax2 10
