@@ -9,9 +9,7 @@ jobs:
 
     steps:
       - name: Install Radare
-        run: |
-          sudo -i
-          apt-get install radare2
+        run: apt-get install radare2
       - name: Print hexa
         run: |
           rax2 10
