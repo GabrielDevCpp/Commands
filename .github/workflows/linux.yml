@@ -43,6 +43,10 @@ jobs:
         run: xxd a.out | less
       - name: Demangle
         run: objdump -d a.out | less
+      - name: Find entrypoint
+        run: objdump -D a.out | grep entrypoint
+      - name: Find main
+        run: objdump -D a.out | grep main
       - name: Show system calls
         run: strace ./a.out
       - name: Show functions calss
