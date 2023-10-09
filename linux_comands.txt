@@ -5,6 +5,11 @@ i
 esc
 :x
 
+*Files and Folders
+touch file
+mkdir -p Storage/local/user/documents
+tree .
+
 * Contar caracteres em arquivo
 wc -c filename
 
