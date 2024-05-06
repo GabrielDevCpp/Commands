@@ -1,0 +1,59 @@
+name: Linux Commands
+
+on: workflow_dispatch
+
+jobs:
+  commands:
+    name: Commands
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Create file
+        run: echo {0..9} >> file.txt
+      - name: Print file
+        run: cat file.txt
+      - name: Count characters
+        run: wc -c file.txt
+      - name: Print timestamp
+        run: date -ud @1654436793
+      - name: Print Ubuntu version
+        run: cat /etc/issue
+      - name: Generate random bytes
+        run: dd if=/dev/urandom of=key bs=32 count=1
+      - name: Print file with bytes
+        run: xxd key
+      - name: Print hex
+        run: |
+          hd key
+          echo -e \\x47\\x61\\x62\\x72\\x69\\x65\\x6c
+      - name: Print base64
+        run: |
+          echo Gabriel | base64
+          echo R2FicmllbAo= | base64 -d
+    
+  compile:
+    name: Compile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create file
+        run: echo $'int main()\n{\nreturn 0;\n}\n' >> file.cpp
+      - name: Show file content
+        run: cat file.cpp
+      - name: Compile file
+        run: g++ file.cpp
+      - name: Show files in directory
+        run: ls -la
+      - name: Count characters
+        run: wc -c a.out
+      - name: Show libs
+        run: ldd a.out
+      - name: Hexdump
+        run: xxd a.out | less
+      - name: Demangle
+        run: objdump -d a.out | less
+      - name: Find main
+        run: objdump -D a.out | grep main
+      - name: Show system calls
+        run: strace ./a.out
+      - name: Show functions calss
+        run: ltrace ./a.out

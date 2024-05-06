@@ -1,0 +1,35 @@
+name: Radare Commands
+
+on: workflow_dispatch
+
+jobs:
+  commands:
+    name: Commands
+    runs-on: alpine
+
+    steps:
+      - name: Install Radare
+        run: |
+          apt-get update
+          apt-get install radare2
+      - name: Print hexa
+        run: |
+          rax2 10
+          rax2 10+34
+      - name: Print decimal  
+        run: |
+          rax2 =10 12
+          rax2 =10 10+34
+      - name: String to hexa
+        run: rax2 -S Gabriel
+      - name: Hexa to string
+        run: rax2 -s 4761627269656c
+      - name: Show ASCII table
+        run: rax2 -a
+
+      - name: Rahash2 - SHA1
+        run: rahash2 -a SHA1 -s Gabriel
+      - name: XOR with 5b
+        run: rahash2 -E xor -S 5B -s Gabriel
+      
+      
