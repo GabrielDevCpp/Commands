@@ -19,3 +19,24 @@ objdump -d ./a.out | less
 
 * Contagem
 echo {0..9}
+
+* Conteudo de arquivo em hexadecimal
+hd [-n32] arquivo.txt
+
+* Mostra a quantidade de bytes de um arquivo
+wc -c arquivo.txt
+
+* Numera as linhas
+nl arquivo.txt
+
+* Mostra informação sobre o conteúdo de ficheiros de formato ELF
+readelf -h a.out
+
+* VI readonly
+view /usr/include/elf.h 
+
+* ht (hview windows)
+ht file
+
+* Get request
+wget url
