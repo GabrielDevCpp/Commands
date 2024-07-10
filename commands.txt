@@ -14,14 +14,10 @@ git log
 
 git remote add origin https://github.com/GabrielDevCpp/Commands.git
 
-<<<<<<< HEAD
 git push -u origin master
 
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-=======
-git push -u origin main
 
 git pull
 
 git rm file
->>>>>>> 9f536e53dd1837c1f94fd583a721782cdab2fe47
